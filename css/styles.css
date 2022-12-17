@@ -19,6 +19,7 @@ html {
   --bgr-footer: #2f303a;
   --bgr-section: #f5f5f5;
   --button-shadow: rgba(0, 0, 0, 0.15);
+  --bgr-modal: rgba(0, 0, 0, 0.2);
   --border-container: #ececec;
   --border-project: #eeeeee;
   --color-icon: #afb1b8;
@@ -245,6 +246,7 @@ img {
   background-color: var(--button-active);
 }
 .overlay {
+  position: relative;
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -255,6 +257,45 @@ img {
   background-size: cover;
   background-color: var(--bgr-color-hero);
   padding: 200px 0;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+ width: 100%;
+  height: 100%;
+  background-color: var(--bgr-modal);
+  opacity: 1;
+  visibility: visible;
+  transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 221px;
+  left: 750px;
+  height: 581px;
+  width: 528px;
+  z-index: 10;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+              0px 1px 1px rgba(0, 0, 0, 0.14),
+              0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: var(--primary-white-color);
+}
+
+.data-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 
 .section-two {
