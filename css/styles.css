@@ -141,8 +141,9 @@ img {
   width: 100%;
   height: 4px;
   background-color: var(--link-underlining);
+  border-radius: 2px;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
 }
 
 .auth-nav {
@@ -267,7 +268,7 @@ img {
   background-color: var(--bgr-modal);
   opacity: 1;
   visibility: visible;
-  transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
   visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 10;
 
@@ -288,9 +289,19 @@ img {
 }
 
 .data-modal-close {
+  max-width: 30px;
+  max-height: 30px;
   position: absolute;
   top: 14px;
   right: 14px;
+  margin: 8px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 .section-two {
@@ -453,7 +464,8 @@ color: var(--primary-white-color);
   width: 44px;
   height: 44px;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .command-links:hover,
@@ -562,8 +574,8 @@ color: var(--primary-white-color);
   visibility: hidden;
   pointer-events: none;
   transform: translateY(100%);
-  transition: transform 800ms cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 800ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover .project-card,
@@ -571,26 +583,7 @@ color: var(--primary-white-color);
   transform: translateY(0%);
   opacity: 1;
   visibility: visible;
-  animation-name: changecard;
-  animation-delay: 50ms; 
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-duration: 600ms;
 }
-
-@keyframes changecard {
-  0% {
-    background-color: gold;
-  }
-
-  50% {
-    background-color: gold;
-  }
-
-  100% {
-    background-color: rgba(33, 150, 243, 0.9);
-  }
-}
-
 
 .project-text {
   font-family: Roboto, sans-serif;
@@ -643,8 +636,8 @@ color: var(--primary-white-color);
   border-radius: 4px;
   color: var(--color-icon);
   background-color: var(--primary-white-color);
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+              border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-links:hover,
@@ -776,7 +769,8 @@ button {
   width: 44px;
   height: 44px;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links:hover,
